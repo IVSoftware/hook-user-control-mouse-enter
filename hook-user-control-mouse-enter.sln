@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hook-user-control-mouse-enter", "hook-user-control-mouse-enter\hook-user-control-mouse-enter.csproj", "{546A2EB6-68A8-4E12-86C6-9239142CC5B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{546A2EB6-68A8-4E12-86C6-9239142CC5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546A2EB6-68A8-4E12-86C6-9239142CC5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546A2EB6-68A8-4E12-86C6-9239142CC5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546A2EB6-68A8-4E12-86C6-9239142CC5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E53D412-5659-427C-8340-903DCAFCE658}
+	EndGlobalSection
+EndGlobal
