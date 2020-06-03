@@ -17,27 +17,31 @@ namespace hook_user_control_mouse_enter
         {
             InitializeComponent();
         }
-        TableLayoutPanel _layout = new TableLayoutPanel() { ColumnCount = 4, RowCount = 4, Dock = DockStyle.Fill };
+        TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel() { ColumnCount = 4, RowCount = 4, Dock = DockStyle.Fill };
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            Controls.Add(_layout);
+            Controls.Add(tableLayoutPanel1);
             int row, column;
             for (int count = 0; count < 12; count++)
             {
                 row = count / 4; column = count % 4;
+
                 MyUserControl myUserControl = new MyUserControl();
-                myUserControl.Name = "MyUserControl" + count.ToString("D2");
-                myUserControl.MouseEnter += MyUserControl_MouseEnter;
-                _layout.Controls.Add(myUserControl, column, row);
+                myUserControl.Name = "MyUserControl_" + count.ToString("D2"); // Name it! (Default is "")                
+                myUserControl.MouseEnter += MyUserControl_MouseEnter;        // Hook the MouseEnter here
+                myUserControl.Codigo = 1000 + count;                         // Example to set Codigo
+
+                tableLayoutPanel1.Controls.Add(myUserControl, column, row);
             }
         }
 
         private void MyUserControl_MouseEnter(object sender, EventArgs e)
         {
-            Control myUserControl = sender as Control;
-            string name = myUserControl.Name;
-            Debug.WriteLine("MouseEnter Detected: " + name);
+            MyUserControl myUserControl = (MyUserControl)sender;
+            Debug.WriteLine(
+                "MouseEnter Detected: " + myUserControl.Name + 
+                " - Value of Codigo is: " + myUserControl.Codigo);
         }
     }
     class MyUserControl : UserControl
@@ -48,5 +52,17 @@ namespace hook_user_control_mouse_enter
             Height = 23;
             Width = 75;
         }
+        public int Codigo 
+        { 
+            set 
+            { 
+                test = value; 
+            } 
+            get 
+            { 
+                return test; 
+            } 
+        }
+        int test = 0;
     }
 }
